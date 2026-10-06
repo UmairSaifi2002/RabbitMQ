@@ -12,6 +12,7 @@ channel.exchange_declare(
 
 # Durable queue
 channel.queue_declare(queue='critical_queue', durable=True)
+channel.confirm_delivery()      # ⭐ Enable publisher confirms
 
 # Bind
 channel.queue_bind(
